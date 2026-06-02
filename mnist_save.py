@@ -4,6 +4,9 @@
 # @Author  : zhangyunfei
 # @File    : mnist_save.py
 # @Software: PyCharm
+import os as _os
+_os.environ.setdefault('KMP_DUPLICATE_LIB_OK', 'TRUE')
+
 import torch
 import torchvision
 import os

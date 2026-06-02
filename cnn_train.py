@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import os as _os
+_os.environ.setdefault('KMP_DUPLICATE_LIB_OK', 'TRUE')
+
 import torch
 import torch.nn as nn
 import torch.optim as optim

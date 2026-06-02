@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """Generate HTML report from training results."""
+import os as _os
+_os.environ.setdefault('KMP_DUPLICATE_LIB_OK', 'TRUE')
+
 import json
 import os
 import subprocess
