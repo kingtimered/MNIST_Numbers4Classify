@@ -86,8 +86,8 @@ def main():
 
     # ── Config ──────────────────────────────────────────
     gpu_mode = (device.type != 'cpu')
-    BATCH_SIZE = 512 if gpu_mode else 128
-    EPOCHS = 20 if gpu_mode else 15
+    BATCH_SIZE = 64 if gpu_mode else 128
+    EPOCHS = 25 if gpu_mode else 15
     LEARNING_RATE = 0.001
     NUM_WORKERS = 2 if gpu_mode else 0
 
@@ -257,12 +257,12 @@ def main():
     log_print('=' * 60)
 
     # ── Save model & log ────────────────────────────────
-    torch.save(model.state_dict(), os.path.join(RESULT_DIR, 'mnist_cnn_gpu.pth'))
-    with open(os.path.join(RESULT_DIR, 'training_log_gpu.json'), 'w') as f:
+    torch.save(model.state_dict(), os.path.join(RESULT_DIR, 'mnist_cnn_gpu_v2.pth'))
+    with open(os.path.join(RESULT_DIR, 'training_log_gpu_v2.json'), 'w') as f:
         json.dump(log, f, indent=2, ensure_ascii=False)
 
-    log_print(f'Model saved to results/mnist_cnn_gpu.pth')
-    log_print(f'Log saved to results/training_log_gpu.json')
+    log_print(f'Model saved to results/mnist_cnn_gpu_v2.pth')
+    log_print(f'Log saved to results/training_log_gpu_v2.json')
 
 
 if __name__ == '__main__':
